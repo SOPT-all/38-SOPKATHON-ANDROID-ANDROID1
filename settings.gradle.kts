@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SOPTKATHON_APP_1"
+rootProject.name = "SOPKATHON_APP_1"
 include(":app")
