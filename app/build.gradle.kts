@@ -71,8 +71,9 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
 
     // Image Loading
-    implementation(libs.coil.compose)
     implementation(libs.coil.base)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
 
     // Core & Lifecycle
     implementation(libs.androidx.core.ktx)
