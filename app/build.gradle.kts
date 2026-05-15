@@ -6,15 +6,25 @@ plugins {
     id("kotlin-kapt")
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
+
 android {
     namespace = "org.sopt.soptackthon_app_1"
-    compileSdk = 36
+    compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
+        buildConfigField("String", "BASE_URL", project.findProperty("BASE_URL")?.toString() ?: "\"\"")
+
         applicationId = "org.sopt.soptackthon_app_1"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -31,9 +41,6 @@ android {
         }
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -53,6 +60,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.navigation)
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -65,8 +73,9 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
 
     // Image Loading
-    implementation(libs.coil.compose)
     implementation(libs.coil.base)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
 
     // Core & Lifecycle
     implementation(libs.androidx.core.ktx)
