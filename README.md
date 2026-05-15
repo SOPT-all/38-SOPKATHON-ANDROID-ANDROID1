@@ -15,19 +15,20 @@
 - **Dependency Management**: Version Catalog (libs.versions.toml)
 
 ## 📁 Folder Structure
-
+```
 org.sopt.soptackthon_app_1
 ├── core
-│ ├── designsystem (Theme, Component)
-│ ├── navigation (Route)
-│ └── util (Extension, Constants)
+│   ├── designsystem (Theme, Component)
+│   ├── navigation (Route)
+│   └── util (Extension, Constants)
 ├── data
-│ ├── dto (Request, Response)
-│ ├── network (ApiFactory, ServicePool)
-│ └── service (Retrofit Interfaces)
+│   ├── dto (Request, Response)
+│   ├── network (ApiFactory, ServicePool)
+│   └── service (Retrofit Interfaces)
 └── presentation
-├── main (MainActivity, NavHost)
-└── [feature] (Screen, ViewModel, UiState)
+    ├── main (MainActivity, NavHost)
+    └── [feature] (Screen, ViewModel, UiState)
+```
 
 ## 📜 Coding Convention
 
