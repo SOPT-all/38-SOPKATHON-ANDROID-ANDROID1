@@ -10,8 +10,13 @@ android {
     namespace = "org.sopt.soptackthon_app_1"
     compileSdk = 36
 
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
+        buildConfigField("String", "BASE_URL", project.findProperty("BASE_URL")?.toString() ?: "\"\"")
+
         applicationId = "org.sopt.soptackthon_app_1"
         minSdk = 24
         targetSdk = 36
@@ -53,6 +58,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.navigation)
     implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
