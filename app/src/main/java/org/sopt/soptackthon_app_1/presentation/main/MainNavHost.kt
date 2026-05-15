@@ -1,4 +1,4 @@
-package org.sopt.soptackthon_app_1.prsentation.main
+package org.sopt.soptackthon_app_1.presentation.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,10 +7,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import org.sopt.soptackthon_app_1.prsentation.gabyu.GabyuRoute
-import org.sopt.soptackthon_app_1.prsentation.yerim.YerimRoute
-import org.sopt.soptackthon_app_1.prsentation.yubin.YubinRoute
-import org.sopt.soptackthon_app_1.prsentation.yubin2.Yubin2Route
+import org.sopt.soptackthon_app_1.presentation.gabyu.GabyuRoute
+import org.sopt.soptackthon_app_1.presentation.yerim.YerimRoute
+import org.sopt.soptackthon_app_1.presentation.yubin.YubinRoute
+import org.sopt.soptackthon_app_1.presentation.yubin2.Yubin2Route
 
 @Composable
 fun MainNavHost(

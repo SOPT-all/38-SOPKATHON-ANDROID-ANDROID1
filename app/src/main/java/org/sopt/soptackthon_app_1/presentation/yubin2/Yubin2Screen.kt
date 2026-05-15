@@ -1,4 +1,4 @@
-package org.sopt.soptackthon_app_1.prsentation.yubin
+package org.sopt.soptackthon_app_1.presentation.yubin2
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,19 +12,19 @@ import org.sopt.soptackthon_app_1.core.util.noRippleClickable
 
 
 @Composable
-fun YubinRoute(
-    navigateToYubin2: () -> Unit
+fun Yubin2Route(
+    navigateToGabyu: () -> Unit
 ) {
-    YubinScreen(
-        navigateToYubin2 = navigateToYubin2,
+    Yubin2Screen(
+        navigateToGabyu = navigateToGabyu,
     )
 }
 
 
 @Composable
-fun YubinScreen(
+fun Yubin2Screen(
     modifier: Modifier = Modifier,
-    navigateToYubin2: () -> Unit = {}
+    navigateToGabyu: () -> Unit = {}
 ) {
     Box(
         modifier = modifier
@@ -34,17 +34,17 @@ fun YubinScreen(
             )
     ) {
         Text(
-            text = "Yubin Screen",
+            text = "Yubin2 Screen",
             modifier = Modifier
-                .noRippleClickable(onClick = navigateToYubin2)
+                .noRippleClickable(onClick = navigateToGabyu)
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun YubinScreenPreview() {
+private fun Yubin2ScreenPreview() {
     SopkathonTheme {
-        YubinScreen()
+        Yubin2Screen()
     }
 }

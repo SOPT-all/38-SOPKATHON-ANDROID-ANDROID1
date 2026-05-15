@@ -1,4 +1,4 @@
-package org.sopt.soptackthon_app_1.data.dto.requset
+package org.sopt.soptackthon_app_1.data.dto.request
 
 
 import kotlinx.serialization.SerialName

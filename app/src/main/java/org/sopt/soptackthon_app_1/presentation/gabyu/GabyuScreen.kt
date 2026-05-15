@@ -1,4 +1,4 @@
-package org.sopt.soptackthon_app_1.prsentation.gabyu
+package org.sopt.soptackthon_app_1.presentation.gabyu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

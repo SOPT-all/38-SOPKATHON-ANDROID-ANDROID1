@@ -1,4 +1,4 @@
-package org.sopt.soptackthon_app_1.prsentation.main
+package org.sopt.soptackthon_app_1.presentation.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

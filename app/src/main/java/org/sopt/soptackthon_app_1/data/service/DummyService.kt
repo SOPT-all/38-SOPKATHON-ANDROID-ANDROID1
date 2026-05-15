@@ -1,7 +1,7 @@
 package org.sopt.soptackthon_app_1.data.service
 
 import org.sopt.soptackthon_app_1.data.dto.base.BaseResponse
-import org.sopt.soptackthon_app_1.data.dto.requset.DummyRequestDto
+import org.sopt.soptackthon_app_1.data.dto.request.DummyRequestDto
 import org.sopt.soptackthon_app_1.data.dto.response.DummyResponseDto
 import retrofit2.http.Body
 import retrofit2.http.GET
