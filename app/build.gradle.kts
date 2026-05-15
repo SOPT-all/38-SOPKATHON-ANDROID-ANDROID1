@@ -6,9 +6,14 @@ plugins {
     id("kotlin-kapt")
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
+
 android {
     namespace = "org.sopt.soptackthon_app_1"
-    compileSdk = 36
+    compileSdk = 35
 
     buildFeatures {
         buildConfig = true
@@ -19,7 +24,7 @@ android {
 
         applicationId = "org.sopt.soptackthon_app_1"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -36,9 +41,6 @@ android {
         }
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

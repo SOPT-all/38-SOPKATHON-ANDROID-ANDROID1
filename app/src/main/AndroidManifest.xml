@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Soptackthon_app_1">
         <activity
-            android:name=".prsentation.main.MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Soptackthon_app_1">
