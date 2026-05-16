@@ -10,7 +10,8 @@ import org.sopt.soptackthon_app_1.data.service.DummyService
 import retrofit2.Retrofit
 
 object ApiFactory {
-    private const val BASE_URL: String = BuildConfig.BASE_URL
+    private val BASE_URL: String = if (BuildConfig.BASE_URL.isEmpty()) "http://localhost/" else BuildConfig.BASE_URL
+
     private val json = Json {
         ignoreUnknownKeys = true
     }
@@ -35,5 +36,5 @@ object ApiFactory {
 
 object ServicePool {
     //TODO Service 적으면 돼요
-    val dummyService = ApiFactory.create<DummyService>()
+    val dummyService by lazy { ApiFactory.create<DummyService>() }
 }

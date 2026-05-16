@@ -1,19 +1,36 @@
 package org.sopt.soptackthon_app_1.presentation.main
 
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavOptionsBuilder
+import org.sopt.soptackthon_app_1.core.navigation.Gabyu
+import org.sopt.soptackthon_app_1.core.navigation.Route
+import org.sopt.soptackthon_app_1.core.navigation.Yerim
+import org.sopt.soptackthon_app_1.core.navigation.Yubin
+import org.sopt.soptackthon_app_1.core.navigation.Yubin2
 
-fun NavController.navigateToYubin() {
-    navigate("yubin")
+fun NavController.navigateToYubin(navOptions: NavOptionsBuilder.() -> Unit = {}) {
+    navigate(Yubin, navOptions)
 }
 
-fun NavController.navigateToYerim() {
-    navigate("yerim")
+fun NavController.navigateToYerim(navOptions: NavOptionsBuilder.() -> Unit = {}) {
+    navigate(Yerim, navOptions)
 }
 
-fun NavController.navigateToGabyu() {
-    navigate("gabyu")
+fun NavController.navigateToGabyu(navOptions: NavOptionsBuilder.() -> Unit = {}) {
+    navigate(Gabyu, navOptions)
 }
 
-fun NavController.navigateToYubin2() {
-    navigate("yubin2")
+fun NavController.navigateToYubin2(navOptions: NavOptionsBuilder.() -> Unit = {}) {
+    navigate(Yubin2, navOptions)
+}
+
+fun NavController.navigateMainTab(route: Route) {
+    navigate(route) {
+        popUpTo(graph.findStartDestination().id) {
+            saveState = true
+        }
+        launchSingleTop = true
+        restoreState = true
+    }
 }

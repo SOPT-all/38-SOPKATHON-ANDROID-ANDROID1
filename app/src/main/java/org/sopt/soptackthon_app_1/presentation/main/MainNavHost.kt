@@ -7,6 +7,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import org.sopt.soptackthon_app_1.core.navigation.Gabyu
+import org.sopt.soptackthon_app_1.core.navigation.Yerim
+import org.sopt.soptackthon_app_1.core.navigation.Yubin
+import org.sopt.soptackthon_app_1.core.navigation.Yubin2
 import org.sopt.soptackthon_app_1.presentation.gabyu.GabyuRoute
 import org.sopt.soptackthon_app_1.presentation.yerim.YerimRoute
 import org.sopt.soptackthon_app_1.presentation.yubin.YubinRoute
@@ -22,29 +26,29 @@ fun MainNavHost(
     ) {
         NavHost(
             navController = navController,
-            startDestination = "gabyu"
+            startDestination = Yerim
         ) {
-            composable(route = "gabyu") {
-                GabyuRoute(
-                    navigateToYerim = { navController.navigateToYerim() }
-                )
-            }
-
-            composable(route = "yerim") {
+            composable<Yerim> {
                 YerimRoute(
                     navigateToYubin = { navController.navigateToYubin() }
                 )
             }
 
-            composable(route = "yubin") {
+            composable<Yubin> {
                 YubinRoute(
-                    navigateToYubin2 = { navController.navigateToYubin2() }
+                    navigateToGabyu = { navController.navigateToGabyu() }
                 )
             }
 
-            composable(route = "yubin2") {
+            composable<Yubin2> {
                 Yubin2Route(
                     navigateToGabyu = { navController.navigateToGabyu() },
+                )
+            }
+
+            composable<Gabyu> {
+                GabyuRoute(
+                    navigateToYerim = { navController.navigateToYerim() }
                 )
             }
         }
