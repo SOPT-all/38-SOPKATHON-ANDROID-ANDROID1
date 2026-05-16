@@ -1,5 +1,6 @@
 package org.sopt.soptackthon_app_1.presentation.yubin
 
+import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -7,32 +8,36 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.sopt.soptackthon_app_1.data.network.ServicePool
-import org.sopt.soptackthon_app_1.presentation.yerim.YerimUiState
-
 
 class YubinViewModel : ViewModel() {
-    private val DummyService = ServicePool.dummyService
-    private val _uiState = MutableStateFlow(YerimUiState())
-    val uiState: StateFlow<YerimUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(YubinUiState())
+    val uiState: StateFlow<YubinUiState> = _uiState.asStateFlow()
 
-    private fun dummy() {
+    fun updateTitle(title: String) {
+        _uiState.update { it.copy(title = title) }
+    }
+
+    fun updateImageUri(uri: Uri?) {
+        _uiState.update { it.copy(imageUri = uri) }
+    }
+
+    fun postRecord() {
         viewModelScope.launch {
-            //request 는 따로 데이터 담아서 보내면 되고, 이런식으로 service 객체에서 함수 뽑아 쓰면 됩니다
-            // val response = exampleService.postExampleData(request)
-
+            _uiState.update { it.copy(isLoading = true) }
             try {
-
+                // TODO: 실제 API 연결 시 multipart 등으로 이미지 전송 로직 구현
+                // val response = service.postRecord(title = _uiState.value.title, image = ...)
+                
+                _uiState.update { it.copy(isLoading = false, isSuccess = true) }
             } catch (e: Exception) {
                 _uiState.update {
                     it.copy(
                         isLoading = false,
                         isSuccess = false,
-                        error = e.message ?: "example failed"
+                        error = e.message ?: "저장에 실패했습니다."
                     )
                 }
             }
         }
     }
 }
-

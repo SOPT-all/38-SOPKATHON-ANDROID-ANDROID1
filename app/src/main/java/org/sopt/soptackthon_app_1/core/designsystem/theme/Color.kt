@@ -19,7 +19,7 @@ val gray_200 = Color(0xFFE9E9E9)
 val gray_300 = Color(0xFFDEDEDE)
 val gray_400 = Color(0xFFC9C9C9)
 val gray_500 = Color(0xFF999999)
-val gray_700 = Color(0xFF4A5868)
+val gray_700 = Color(0xFF545454)
 val gray_900 = Color(0xFF212121)
 
 //sub Color
@@ -35,6 +35,7 @@ val gradient_ = Brush.horizontalGradient(
     colors = listOf(Color(0xFFFFEE68), Color(0xFFFFFBD7))
 )
 
+val sub_green_gray = Color(0xFFE9F3E9)
 
 @Immutable
 data class SopkathonColor(
@@ -56,8 +57,8 @@ data class SopkathonColor(
     val subGreen: Color = sub_green,
     val white: Color = white_,
     val black: Color = black_,
-    val gradient: Brush = gradient_
-
+    val gradient: Brush = gradient_,
+    val subGreenGray: Color = sub_green_gray,
 )
 
 val defaultSopkathonColor = SopkathonColor(
@@ -79,8 +80,8 @@ val defaultSopkathonColor = SopkathonColor(
     subGreen = sub_green,
     white = white_,
     black = black_,
-    gradient = gradient_
-
+    gradient = gradient_,
+    subGreenGray = sub_green_gray,
 )
 
 

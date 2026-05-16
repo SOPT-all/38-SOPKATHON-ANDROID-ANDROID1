@@ -2,6 +2,7 @@ package org.sopt.soptackthon_app_1.core.designsystem.theme
 
 import android.app.Activity
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
@@ -38,6 +39,17 @@ fun ProvideSopkathonColorsAndTypography(
 fun SopkathonTheme(
     content: @Composable () -> Unit,
 ) {
+    val colorScheme = lightColorScheme(
+        primary = primary_main,
+        secondary = primary_sub,
+        background = white_,
+        surface = white_,
+        onPrimary = black_,
+        onSecondary = black_,
+        onBackground = black_,
+        onSurface = black_,
+    )
+
     ProvideSopkathonColorsAndTypography(
         colors = defaultSopkathonColor,
         typography = defaultSopkathonTypography,
@@ -46,11 +58,12 @@ fun SopkathonTheme(
         if (!view.isInEditMode) {
             SideEffect {
                 (view.context as Activity).window.run {
-                    WindowCompat.getInsetsController(this, view).isAppearanceLightStatusBars = false
+                    WindowCompat.getInsetsController(this, view).isAppearanceLightStatusBars = true
                 }
             }
         }
         MaterialTheme(
+            colorScheme = colorScheme,
             content = content
         )
     }
