@@ -1,6 +1,6 @@
-<img width="4896" height="3672" alt="KakaoTalk_Photo_2026-05-17-01-12-36" src="https://github.com/user-attachments/assets/92d283f7-7ee9-4b0a-8f83-9148a62ac581" /># 38-SOPKATHON-ANDROID-ANDROID1
-
 ## 🚀 프로젝트 소개
+
+<img width="4896" height="3672" alt="KakaoTalk_Photo_2026-05-17-01-12-36" src="https://github.com/user-attachments/assets/92d283f7-7ee9-4b0a-8f83-9148a62ac581" /># 38-SOPKATHON-ANDROID-ANDROID1
 
 ## 1. 서비스 이름 및 간단한 소개
 ### 서비스 명 : 노화우
@@ -118,5 +118,11 @@ org.sopt.soptackthon_app_1
 ### **BEFORE**
 
 <img width="4896" height="3672" alt="KakaoTalk_Photo_2026-05-17-01-12-36" src="https://github.com/user-attachments/assets/fcf7ea31-a804-43ae-a1fe-0f7eea559d98" />
+
+### **AFTER**
+<img width="4896" height="3672" alt="KakaoTalk_20260517_075804536_01" src="https://github.com/user-attachments/assets/efaca5bc-e1da-49db-8c1a-8831ccf03339" />
+
+
+
 
 
