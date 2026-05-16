@@ -26,8 +26,6 @@ class YubinViewModel : ViewModel() {
             _uiState.update { it.copy(isLoading = true) }
             try {
                 // TODO: 실제 API 연결 시 multipart 등으로 이미지 전송 로직 구현
-                // val response = service.postRecord(title = _uiState.value.title, image = ...)
-                
                 _uiState.update { it.copy(isLoading = false, isSuccess = true) }
             } catch (e: Exception) {
                 _uiState.update {
@@ -35,6 +33,23 @@ class YubinViewModel : ViewModel() {
                         isLoading = false,
                         isSuccess = false,
                         error = e.message ?: "저장에 실패했습니다."
+                    )
+                }
+            }
+        }
+    }
+
+    fun shareToBoard() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+            try {
+                // TODO: 실제 공유 API 호출 (POST /api/v1/records/{recordId}/share 등)
+                _uiState.update { it.copy(isLoading = false, isSuccess = true) }
+            } catch (e: Exception) {
+                _uiState.update {
+                    it.copy(
+                        isLoading = false,
+                        error = e.message ?: "공유에 실패했습니다."
                     )
                 }
             }
