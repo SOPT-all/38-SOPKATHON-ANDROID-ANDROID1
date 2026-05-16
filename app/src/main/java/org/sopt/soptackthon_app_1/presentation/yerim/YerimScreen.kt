@@ -51,7 +51,7 @@ fun YerimScreen(
 
         YerimTopBar()
 
-        Spacer(modifier = Modifier.height(36.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         Text(
             text = "오늘의 노화우",
@@ -83,7 +83,7 @@ fun YerimScreen(
                     sec = card.sec
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(15.dp))
             }
         }
     }
