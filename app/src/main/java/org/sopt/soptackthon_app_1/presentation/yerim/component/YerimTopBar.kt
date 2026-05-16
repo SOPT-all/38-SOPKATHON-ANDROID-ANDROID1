@@ -1,13 +1,9 @@
 package org.sopt.soptackthon_app_1.presentation.yerim.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,35 +19,28 @@ import org.sopt.soptackthon_app_1.core.designsystem.theme.SopkathonTheme
 fun YerimTopBar(
     modifier: Modifier = Modifier
 ){
-    Row(
+    Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(70.dp)
-            .padding(
-//                start = 18.dp,
-//                end = 18.dp,
-                top = 47.dp
-            ),
-        verticalAlignment = Alignment.CenterVertically,
-//        horizontalArrangement = Arrangement.SpaceBetween
-    ){
+            .padding(top = 32.dp)
+    ) {
+
         Image(
             painter = painterResource(id = R.drawable.img_home_logo),
-            contentDescription = null
+            contentDescription = null,
+            modifier = Modifier.align(Alignment.CenterStart)
         )
-
-        Spacer(modifier = Modifier.padding(end = 110.dp))
 
         Text(
             text = "노화우",
-            style = SopkathonTheme.typography.head.head3
+            style = SopkathonTheme.typography.head.head3,
+            modifier = Modifier.align(Alignment.Center)
         )
-
-        Spacer(modifier = Modifier.padding(end = 150.dp))
 
         Icon(
             painter = painterResource(R.drawable.ic_notification_24),
             contentDescription = null,
+            modifier = Modifier.align(Alignment.CenterEnd)
         )
     }
 }
