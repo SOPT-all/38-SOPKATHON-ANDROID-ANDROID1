@@ -15,6 +15,7 @@ import coil3.compose.SubcomposeAsyncImage
 import coil3.compose.SubcomposeAsyncImageContent
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import org.sopt.soptackthon_app_1.BuildConfig
 
 /**
  * URL을 통해 이미지를 비동기로 로드하여 표시하는 Composable입니다.
@@ -36,6 +37,14 @@ fun UrlImage(
     contentScale: ContentScale = ContentScale.Fit,
     contentDescription: String? = null,
 ) {
+    val fullUrl = if (url.startsWith("http")) {
+        url
+    } else if (url.isNotBlank()) {
+        BuildConfig.BASE_URL.removeSuffix("/") + "/" + url.removePrefix("/")
+    } else {
+        ""
+    }
+
     if (LocalInspectionMode.current) {
         placeholderDrawable?.let { drawableRes ->
             Image(
@@ -61,7 +70,7 @@ fun UrlImage(
 
     SubcomposeAsyncImage(
         model = ImageRequest.Builder(LocalPlatformContext.current)
-            .data(url.ifBlank { null })
+            .data(fullUrl.ifBlank { null })
             .crossfade(true)
             .build(),
         contentDescription = contentDescription,

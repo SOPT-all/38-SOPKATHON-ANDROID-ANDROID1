@@ -5,32 +5,73 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.sopt.soptackthon_app_1.data.network.ServicePool
-import org.sopt.soptackthon_app_1.presentation.yerim.YerimUiState
+import java.util.Calendar
 
 class GabyuViewModel : ViewModel() {
-    private val DummyService = ServicePool.dummyService
-    private val _uiState = MutableStateFlow(YerimUiState())
-    val uiState: StateFlow<YerimUiState> = _uiState.asStateFlow()
+    private val recordService = ServicePool.recordService
 
-    private fun dummy() {
+    private val _uiState = MutableStateFlow<GabyuUiState>(GabyuUiState.Loading)
+    val uiState: StateFlow<GabyuUiState> = _uiState.asStateFlow()
+
+    init {
+        getCalendar(2026, 5)
+    }
+
+    fun getCalendar(year: Int, month: Int) {
         viewModelScope.launch {
-            //request 는 따로 데이터 담아서 보내면 되고, 이런식으로 service 객체에서 함수 뽑아 쓰면 됩니다
-            // val response = exampleService.postExampleData(request)
-
-            try {
-
-            } catch (e: Exception) {
-                _uiState.update {
-                    it.copy(
-                        isLoading = false,
-                        isSuccess = false,
-                        error = e.message ?: "example failed"
+            _uiState.value = GabyuUiState.Loading
+            runCatching {
+                recordService.getCalendar(year, month)
+            }.onSuccess { response ->
+                if (response.success) {
+                    val data = response.data
+                    val fullGridDays = createCalendarGrid(year, month, data.days.map { 
+                        CalendarDayUiModel(it.day, it.recordId, it.thumbnailUrl)
+                    })
+                    
+                    _uiState.value = GabyuUiState.Success(
+                        fullGridDays = fullGridDays,
+                        info = CalendarInfoUiModel(
+                            year = data.year,
+                            month = data.month,
+                            recordCount = data.recordCount,
+                            sharedCount = data.sharedCount
+                        )
                     )
+                } else {
+                    _uiState.value = GabyuUiState.Error(response.message)
                 }
+            }.onFailure {
+                _uiState.value = GabyuUiState.Error(it.message ?: "캘린더 조회 실패")
             }
         }
+    }
+
+    private fun createCalendarGrid(year: Int, month: Int, records: List<CalendarDayUiModel>): List<CalendarDayUiModel> {
+        val calendar = Calendar.getInstance().apply {
+            set(Calendar.YEAR, year)
+            set(Calendar.MONTH, month - 1)
+            set(Calendar.DAY_OF_MONTH, 1)
+        }
+
+        val startDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) // 1: Sun, 2: Mon, ...
+        val daysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
+
+        val grid = mutableListOf<CalendarDayUiModel>()
+
+        // Pad start
+        for (i in 1 until startDayOfWeek) {
+            grid.add(CalendarDayUiModel(null))
+        }
+
+        // Fill days
+        for (day in 1..daysInMonth) {
+            val record = records.find { it.day == day }
+            grid.add(record ?: CalendarDayUiModel(day))
+        }
+
+        return grid
     }
 }
