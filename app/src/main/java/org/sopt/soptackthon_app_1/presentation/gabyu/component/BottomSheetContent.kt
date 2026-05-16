@@ -15,6 +15,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -84,7 +88,7 @@ fun BottomSheetContent(
             Spacer(modifier = Modifier.width(13.dp))
             Column {
                 Text(
-                    text = "카카오톡으로 보내기",
+                    text =  "카카오톡으로 보내기",
                     style = SopkathonTheme.typography.head.head6_medium,
                     color = SopkathonTheme.colors.gray900
                 )
@@ -114,6 +118,7 @@ fun BottomSheetContent(
                 .padding(horizontal = 16.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
+
             Icon(
                 painter = painterResource(R.drawable.ic_link_icon),
                 contentDescription = null,

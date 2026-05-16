@@ -10,7 +10,6 @@ kotlin {
     jvmToolchain(17)
 }
 
-
 android {
     namespace = "org.sopt.soptackthon_app_1"
     compileSdk = 35

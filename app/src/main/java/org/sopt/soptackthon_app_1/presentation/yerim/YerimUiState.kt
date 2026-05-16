@@ -1,11 +1,11 @@
 package org.sopt.soptackthon_app_1.presentation.yerim
 
+import org.sopt.soptackthon_app_1.data.dto.response.YerimResponseDto
+
 data class YerimUiState(
-    val title: String = "",
-    //변수들 추가해주세용
+    val records: List<YerimResponseDto.Record> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null,
     val isSuccess: Boolean = false,
-) {
+)
 
-}

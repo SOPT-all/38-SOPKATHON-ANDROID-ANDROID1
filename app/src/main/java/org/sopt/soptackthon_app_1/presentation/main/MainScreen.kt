@@ -12,6 +12,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import org.sopt.soptackthon_app_1.core.navigation.Yubin2
 import org.sopt.soptackthon_app_1.presentation.main.component.MainBottomBar
 import org.sopt.soptackthon_app_1.presentation.main.component.MainTab
 
@@ -21,8 +22,11 @@ fun MainScreen(
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
-    val currentTab = MainTab.find { route ->
-        currentDestination?.hierarchy?.any { it.hasRoute(route::class) } == true
+    val currentTab = when {
+        currentDestination?.hasRoute<Yubin2>() == true -> MainTab.GABYU
+        else -> MainTab.find { route ->
+            currentDestination?.hierarchy?.any { it.hasRoute(route::class) } == true
+        }
     }
 
     Scaffold(
