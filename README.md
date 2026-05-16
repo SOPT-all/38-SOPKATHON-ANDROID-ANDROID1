@@ -2,9 +2,21 @@
 
 ## 🚀 프로젝트 소개
 
-- **프로젝트 명**: [여기에 프로젝트 명을 적어주세요]
+## 1. 서비스 이름 및 간단한 소개
+### 서비스 명 : 
+- **한 줄 소개**: [여기에 한 줄 소개를 적어주세요]
+  
+## 2. 주요 기능
 - **한 줄 소개**: [여기에 한 줄 소개를 적어주세요]
 
+## 3. 팀원 역할 분담
+
+| 👑 한유빈<br/>([@oilbeaneda](https://github.com/oilbeaneda)) | 김예림<br/>([@doorimng](https://github.com/doorimng)) | 윤갑유<br/>([@gahbyu](https://github.com/gahbyu)) |
+| :---: | :---: | :---: |
+| <img width="200px" src="https://github.com/oilbeaneda.png"/> | <img width="200px" src="https://github.com/doorimng.png"/> | <img width="200px" src="https://github.com/gahbyu.png"/> |
+| `역할을 입력해주세요` | `역할을 입력해주세요` | `역할을 입력해주세요` |
+
+  
 ## 🛠 Tech Stack
 
 - **Language**: Kotlin
@@ -15,6 +27,7 @@
 - **Dependency Management**: Version Catalog (libs.versions.toml)
 
 ## 📁 Folder Structure
+
 ```
 org.sopt.soptackthon_app_1
 ├── core
@@ -66,6 +79,9 @@ org.sopt.soptackthon_app_1
 
 | 브랜치 유형    | 내용                           |
 |-----------|------------------------------|
+| `yubin`    | 한유빈이 작업하는 브랜치         |
+| `yerim`    | 김예림이 작업하는 브랜치         |
+| `gahbyu`   | 윤갑유가 작업하는 브랜치         |
 | `main`    | 완성된 버전의 코드를 저장하는 브랜치         |
 | `develop` | 개발이 진행되는 동안 완성된 코드를 저장하는 브랜치 |
 | `feature` | 작은 단위의 작업이 진행되는 브랜치          |
@@ -75,7 +91,7 @@ org.sopt.soptackthon_app_1
 
 - 유형/#이슈번호-what
 
-  ex) feat/#30-home-ui, init/#1-add-font
+  ex) yubin/#30-home-ui, yerim/#1-add-font, hotfix/#18-qa
 
 | 카테고리       | 내용    |
 |------------|-------|
@@ -85,9 +101,3 @@ org.sopt.soptackthon_app_1
 | `del`      | 삭제    |
 | `fix`      | 버그 수정 |
 | `refactor` | 리팩토링  |
-
-## 🤝 Contributors
-
-- [한유빈](https://github.com/oilbeaneda)
-- [김예림](https://github.com/doorimng)
-- [윤갑유](https://github.com/gahbyu)
