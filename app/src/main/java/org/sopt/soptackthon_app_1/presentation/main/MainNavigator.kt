@@ -21,8 +21,8 @@ fun NavController.navigateToGabyu(navOptions: NavOptionsBuilder.() -> Unit = {})
     navigate(Gabyu, navOptions)
 }
 
-fun NavController.navigateToYubin2(navOptions: NavOptionsBuilder.() -> Unit = {}) {
-    navigate(Yubin2, navOptions)
+fun NavController.navigateToYubin2(recordId: Long, navOptions: NavOptionsBuilder.() -> Unit = {}) {
+    navigate(Yubin2(recordId), navOptions)
 }
 
 fun NavController.navigateMainTab(route: Route) {

@@ -15,6 +15,7 @@ import org.sopt.soptackthon_app_1.presentation.gabyu.GabyuRoute
 import org.sopt.soptackthon_app_1.presentation.yerim.YerimRoute
 import org.sopt.soptackthon_app_1.presentation.yubin.YubinRoute
 import org.sopt.soptackthon_app_1.presentation.yubin2.Yubin2Route
+import androidx.navigation.toRoute
 
 @Composable
 fun MainNavHost(
@@ -40,8 +41,10 @@ fun MainNavHost(
                 )
             }
 
-            composable<Yubin2> {
+            composable<Yubin2> { backStackEntry ->
+                val route: Yubin2 = backStackEntry.toRoute()
                 Yubin2Route(
+                    recordId = route.recordId,
                     navigateToGabyu = { navController.navigateToGabyu() },
                 )
             }

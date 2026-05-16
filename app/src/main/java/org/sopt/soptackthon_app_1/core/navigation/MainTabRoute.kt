@@ -14,4 +14,4 @@ data object Yubin : MainTabRoute
 data object Gabyu : MainTabRoute
 
 @Serializable
-data object Yubin2 : Route
+data class Yubin2(val recordId: Long) : Route
