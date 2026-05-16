@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
@@ -23,13 +24,13 @@ import org.sopt.soptackthon_app_1.core.designsystem.theme.gray_900
 @Composable
 fun YerimCardTextComponent(
     profileImg: Int,
-    text: String = "ㄴㅇ라ㅓㅁ나ㅣㅇ러ㅣㅏㄴㅇ머라ㅣㅁㄴ어ㅏㅣ;ㅌㄹ",
+    text: String,
     name: String,
     age: Int,
     modifier: Modifier = Modifier
 ){
     Column(
-        modifier = modifier
+        modifier = modifier.fillMaxWidth()
     ){
         Row(
             modifier = Modifier,
@@ -101,6 +102,7 @@ private fun YerimCardTextComponentPreview(){
         YerimCardTextComponent(
             profileImg = R.drawable.profile,
             name = "강순자",
+            text = "ㄴㅇ라ㅓㅁ나ㅣㅇ러ㅣㅏㄴㅇ머라ㅣㅁㄴ어ㅏㅣ;ㅌㄹ",
             age = 60
         )
     }
