@@ -36,7 +36,7 @@ fun MainNavHost(
 
             composable<Yubin> {
                 YubinRoute(
-                    navigateToYubin2 = { navController.navigateToYubin2() }
+                    navigateToGabyu = { navController.navigateToGabyu() }
                 )
             }
 
