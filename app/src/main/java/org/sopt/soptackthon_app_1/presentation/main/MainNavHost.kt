@@ -52,7 +52,10 @@ fun MainNavHost(
 
             composable<Gabyu> {
                 GabyuRoute(
-                    navigateToYerim = { navController.navigateToYerim() }
+                    navigateToYerim = { navController.navigateToYerim() },
+                    navigateToCardDetail = { recordId ->
+                        navController.navigate(Yubin2(recordId))
+                    }
                 )
             }
         }

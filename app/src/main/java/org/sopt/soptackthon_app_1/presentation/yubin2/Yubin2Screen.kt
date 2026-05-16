@@ -37,6 +37,9 @@ import org.sopt.soptackthon_app_1.R
 import org.sopt.soptackthon_app_1.core.designsystem.theme.SopkathonTheme
 import org.sopt.soptackthon_app_1.core.util.noRippleClickable
 
+import org.sopt.soptackthon_app_1.core.designsystem.component.UrlImage
+import org.sopt.soptackthon_app_1.core.util.noRippleClickable
+
 @Composable
 fun Yubin2Route(
     recordId: Long,
@@ -166,12 +169,11 @@ fun Yubin2Screen(
                     .clip(RoundedCornerShape(15.dp))
                     .background(SopkathonTheme.colors.gray100)
             ) {
-                AsyncImage(
-                    model = record?.photoUrl,
-                    contentDescription = null,
+                UrlImage(
+                    url = record?.photoUrl ?: "",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop,
-                    placeholder = painterResource(R.drawable.ic_launcher_background)
+                    placeholderDrawable = R.drawable.ic_launcher_background
                 )
             }
 
