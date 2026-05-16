@@ -39,7 +39,7 @@ fun MainBottomBar(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .background(color = Color.Black)
+            .background(color = SopkathonTheme.colors.black)
             .navigationBarsPadding(),
     ) {
         Box(
@@ -47,7 +47,7 @@ fun MainBottomBar(
                 Modifier
                     .fillMaxWidth()
                     .height(1.dp)
-                    .background(color = Color.Black),
+                    .background(color = SopkathonTheme.colors.black),
         )
 
         Row(
