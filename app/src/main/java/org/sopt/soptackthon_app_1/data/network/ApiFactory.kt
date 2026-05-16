@@ -6,6 +6,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.sopt.soptackthon_app_1.BuildConfig
+import org.sopt.soptackthon_app_1.data.service.DummyService
 import retrofit2.Retrofit
 
 object ApiFactory {
@@ -34,4 +35,5 @@ object ApiFactory {
 
 object ServicePool {
     //TODO Service 적으면 돼요
+    val dummyService = ApiFactory.create<DummyService>()
 }
