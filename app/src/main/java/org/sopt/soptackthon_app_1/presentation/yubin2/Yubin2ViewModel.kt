@@ -1,5 +1,6 @@
 package org.sopt.soptackthon_app_1.presentation.yubin2
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -19,7 +20,9 @@ class Yubin2ViewModel : ViewModel() {
             _uiState.update { it.copy(isLoading = true) }
             try {
                 val response = recordService.getRecordDetail(recordId)
-                if (response.status in 200..299) {
+                Log.d("Yubin2ViewModel", "Response: $response")
+                if (response.success) {
+                    Log.d("Yubin2ViewModel", "Success: ${response.data}")
                     _uiState.update {
                         it.copy(
                             isLoading = false,
@@ -27,9 +30,11 @@ class Yubin2ViewModel : ViewModel() {
                         )
                     }
                 } else {
+                    Log.e("Yubin2ViewModel", "Error Message: ${response.message}")
                     _uiState.update { it.copy(isLoading = false, error = response.message) }
                 }
             } catch (e: Exception) {
+                Log.e("Yubin2ViewModel", "Exception: ${e.message}", e)
                 _uiState.update {
                     it.copy(
                         isLoading = false,

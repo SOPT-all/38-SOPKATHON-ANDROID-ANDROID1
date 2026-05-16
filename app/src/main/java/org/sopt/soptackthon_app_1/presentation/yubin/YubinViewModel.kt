@@ -67,7 +67,7 @@ class YubinViewModel : ViewModel() {
                     recordedAt = recordedAtBody
                 )
 
-                if (response.status in 200..299) {
+                if (response.success) {
                     _uiState.update { 
                         it.copy(
                             isLoading = false, 
