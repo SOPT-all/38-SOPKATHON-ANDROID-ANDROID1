@@ -3,8 +3,10 @@ package org.sopt.soptackthon_app_1.presentation.yerim.component
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContentPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -28,11 +30,11 @@ fun YerimFilmChip(
 ){
     Box(
         modifier = modifier
+            .alpha(0.6f)
             .background(
                 color = Color(0xFF191919),
                 shape = CircleShape,
             )
-            .alpha(0.6f)
     ){
         Row(
             modifier = Modifier.padding(
@@ -48,6 +50,8 @@ fun YerimFilmChip(
                 contentDescription = null,
                 tint = gray_200
             )
+
+            Spacer(modifier = Modifier.width(1.dp))
 
             Text(
                 text = "${sec}s",
