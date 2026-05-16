@@ -1,35 +1,39 @@
 package org.sopt.soptackthon_app_1.presentation.yerim.component
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.sopt.soptackthon_app_1.R
+import org.sopt.soptackthon_app_1.core.designsystem.component.UrlImage
 import org.sopt.soptackthon_app_1.core.designsystem.theme.SopkathonTheme
 import org.sopt.soptackthon_app_1.core.designsystem.theme.black_
 import org.sopt.soptackthon_app_1.core.designsystem.theme.gray_900
 
 @Composable
 fun YerimCardTextComponent(
-    profileImg: Int,
     text: String,
+    profileImageUrl: String,
     name: String,
     age: Int,
+    createdAt: String,
     modifier: Modifier = Modifier,
-    likes: Int = 62,
-    comments: Int = 12
+    likes: Int = 12,
+    comments: Int = 30
 ){
     Column(
         modifier = modifier.fillMaxWidth()
@@ -38,9 +42,13 @@ fun YerimCardTextComponent(
             modifier = Modifier,
             verticalAlignment = Alignment.CenterVertically
         ){
-            Image(
-                painter = painterResource(profileImg),
-                contentDescription = null
+            UrlImage(
+                url = "https://sopkathon.o-r.kr$profileImageUrl",
+                placeholderDrawable = R.drawable.profile,
+                modifier = Modifier
+                    .size(32.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop
             )
 
             Spacer(modifier = Modifier.width(11.dp))
@@ -93,19 +101,5 @@ fun YerimCardTextComponent(
                 reactionCount = comments.toString()
             )
         }
-    }
-
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun YerimCardTextComponentPreview(){
-    SopkathonTheme {
-        YerimCardTextComponent(
-            profileImg = R.drawable.profile,
-            name = "강순자",
-            text = "ㄴㅇ라ㅓㅁ나ㅣㅇ러ㅣㅏㄴㅇ머라ㅣㅁㄴ어ㅏㅣ;ㅌㄹ",
-            age = 60
-        )
     }
 }

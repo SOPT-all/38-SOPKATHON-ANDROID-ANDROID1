@@ -19,7 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import org.sopt.soptackthon_app_1.R
 import org.sopt.soptackthon_app_1.core.designsystem.theme.SopkathonTheme
 import org.sopt.soptackthon_app_1.core.designsystem.theme.gray_500
 import org.sopt.soptackthon_app_1.core.designsystem.theme.gray_900
@@ -78,7 +77,7 @@ fun YerimScreen(
             color = gray_500
         )
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(15.dp))
 
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
@@ -88,12 +87,14 @@ fun YerimScreen(
             items(uiState.records) { record ->
 
                 YerimCardComponent(
-                    imgRes = R.drawable.img_ex,
+                    recordId = record.recordId,
+                    photoUrl = record.photoUrl,
+                    profileImageUrl = record.author.profileImageUrl,
                     text = record.title,
-                    profileImg = R.drawable.profile,
                     name = record.author.name,
                     age = record.author.age,
-                    sec = record.voiceDurationSeconds ?: 0
+                    sec = record.voiceDurationSeconds ?: 0,
+                    createdAt = record.createdAt
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
