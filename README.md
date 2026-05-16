@@ -1,7 +1,4 @@
 ## 🚀 프로젝트 소개
-
-<img width="4896" height="3672" alt="KakaoTalk_Photo_2026-05-17-01-12-36" src="https://github.com/user-attachments/assets/92d283f7-7ee9-4b0a-8f83-9148a62ac581" /># 38-SOPKATHON-ANDROID-ANDROID1
-
 ## 1. 서비스 이름 및 간단한 소개
 ### 서비스 명 : 노화우
 **한 줄 소개**: 노화우는 노화가 다가오는 5·60대를 위해 건강한 나이듦의 노하우를 제안하는 서비스를 뜻합니다
@@ -121,6 +118,13 @@ org.sopt.soptackthon_app_1
 
 ### **AFTER**
 <img width="4896" height="3672" alt="KakaoTalk_20260517_075804536_01" src="https://github.com/user-attachments/assets/efaca5bc-e1da-49db-8c1a-8831ccf03339" />
+
+
+### **시연영상**
+
+https://github.com/user-attachments/assets/290afcab-d980-435a-b129-9f40a2790d39
+
+
 
 
 
