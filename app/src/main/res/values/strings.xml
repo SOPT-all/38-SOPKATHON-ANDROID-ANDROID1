@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">soptackthon_app_1</string>
+    <string name="home">Home</string>
+    <string name="record">기록</string>
+    <string name="myrecord">보관함</string>
+
 </resources>
