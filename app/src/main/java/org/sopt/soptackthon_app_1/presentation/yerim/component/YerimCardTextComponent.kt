@@ -27,7 +27,9 @@ fun YerimCardTextComponent(
     text: String,
     name: String,
     age: Int,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    likes: Int = 62,
+    comments: Int = 12
 ){
     Column(
         modifier = modifier.fillMaxWidth()
@@ -81,14 +83,14 @@ fun YerimCardTextComponent(
         ){
             YerimReactionComponent(
                 icon = R.drawable.ic_heart_22,
-                reactionCount = "62"
+                reactionCount = likes.toString()
             )
 
             Spacer(modifier = Modifier.width(8.dp))
 
             YerimReactionComponent(
                 icon = R.drawable.ic_comment_22,
-                reactionCount = "12"
+                reactionCount = comments.toString()
             )
         }
     }
