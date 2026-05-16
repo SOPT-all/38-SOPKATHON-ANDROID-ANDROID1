@@ -1,0 +1,28 @@
+<!--
+  ~ Copyright (C) 2026 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="22"
+    android:viewportHeight="22">
+  <group>
+    <clip-path
+        android:pathData="M3,3h16v16h-16z"/>
+    <path
+        android:pathData="M14.667,4.278C13.916,4.29 13.182,4.499 12.538,4.885C11.894,5.272 11.364,5.821 11,6.478C10.637,5.821 10.106,5.272 9.462,4.885C8.818,4.499 8.084,4.29 7.333,4.278C6.137,4.33 5.009,4.853 4.197,5.734C3.385,6.615 2.955,7.781 3,8.978C3,12.009 6.191,15.32 8.867,17.565C9.464,18.067 10.22,18.342 11,18.342C11.781,18.342 12.536,18.067 13.133,17.565C15.809,15.32 19,12.009 19,8.978C19.045,7.781 18.615,6.615 17.803,5.734C16.991,4.853 15.863,4.33 14.667,4.278ZM12.277,16.545C11.919,16.845 11.467,17.01 11,17.01C10.533,17.01 10.081,16.845 9.723,16.545C6.298,13.67 4.333,10.913 4.333,8.978C4.288,8.134 4.578,7.307 5.14,6.676C5.702,6.046 6.49,5.663 7.333,5.611C8.177,5.663 8.965,6.046 9.527,6.676C10.089,7.307 10.379,8.134 10.333,8.978C10.333,9.155 10.404,9.324 10.529,9.449C10.654,9.574 10.823,9.644 11,9.644C11.177,9.644 11.346,9.574 11.472,9.449C11.597,9.324 11.667,9.155 11.667,8.978C11.621,8.134 11.911,7.307 12.473,6.676C13.035,6.046 13.823,5.663 14.667,5.611C15.51,5.663 16.299,6.046 16.861,6.676C17.423,7.307 17.712,8.134 17.667,8.978C17.667,10.913 15.702,13.67 12.277,16.542V16.545Z"
+        android:fillColor="#999999"/>
+  </group>
+</vector>
