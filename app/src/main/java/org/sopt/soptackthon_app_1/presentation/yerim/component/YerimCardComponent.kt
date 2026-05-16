@@ -6,9 +6,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import org.sopt.soptackthon_app_1.R
 import org.sopt.soptackthon_app_1.core.designsystem.theme.SopkathonTheme
 import org.sopt.soptackthon_app_1.core.designsystem.theme.gray_200
-import org.sopt.soptackthon_app_1.core.designsystem.theme.white_
 
 @Composable
 fun YerimCardComponent(
@@ -38,7 +37,7 @@ fun YerimCardComponent(
     ){
         Box(
             modifier = Modifier
-                .width(328.dp)
+                .fillMaxWidth()
                 .height(170.dp)
                 .background(
                     color = SopkathonTheme.colors.white,
@@ -79,7 +78,7 @@ fun YerimCardComponent(
 
         Box(
             modifier = Modifier
-                .width(328.dp)
+                .fillMaxWidth()
                 .height(114.dp)
                 .background(
                     color = SopkathonTheme.colors.white,
