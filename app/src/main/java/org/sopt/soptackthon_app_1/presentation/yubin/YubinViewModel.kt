@@ -55,4 +55,8 @@ class YubinViewModel : ViewModel() {
             }
         }
     }
+
+    fun resetState() {
+        _uiState.value = YubinUiState()
+    }
 }

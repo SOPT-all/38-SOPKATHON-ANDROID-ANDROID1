@@ -71,7 +71,7 @@ fun YubinRoute(
 
     LaunchedEffect(uiState.isSuccess) {
         if (uiState.isSuccess) {
-            navigateToGabyu()
+            viewModel.resetState()
         }
     }
 
@@ -101,7 +101,7 @@ fun YubinScreen(
     var tempUri by remember { mutableStateOf<Uri?>(null) }
     var showBottomSheet by remember { mutableStateOf(false) }
     var selectedShareType by remember { mutableStateOf<ShareType?>(null) }
-    val sheetState = rememberModalBottomSheetState()
+    val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
 
     val cameraLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.TakePicture(),
