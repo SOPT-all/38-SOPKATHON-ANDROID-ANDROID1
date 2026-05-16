@@ -42,7 +42,6 @@ fun YerimButtonComponent(
     }
 }
 
-
 @Preview
 @Composable
 private fun YerimButtonComponentPreview(){
