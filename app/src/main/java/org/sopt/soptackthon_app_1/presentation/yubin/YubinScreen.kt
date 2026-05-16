@@ -67,21 +67,17 @@ fun YubinRoute(
     navigateToGabyu: () -> Unit,
     viewModel: YubinViewModel = viewModel()
 ) {
+    val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-
-    LaunchedEffect(uiState.isSuccess) {
-        if (uiState.isSuccess) {
-            viewModel.resetState()
-        }
-    }
 
     YubinScreen(
         uiState = uiState,
-        onBackClick = navigateToGabyu, // 임시로 뒤로가기도 Gabyu로
+        onBackClick = navigateToGabyu,
         onTitleChange = viewModel::updateTitle,
         onImageCapture = viewModel::updateImageUri,
-        onSaveClick = viewModel::postRecord,
-        onShareToBoard = viewModel::shareToBoard
+        onSaveClick = { viewModel.postRecord(context) },
+        onShareToBoard = { viewModel.shareToBoard(context) },
+        onResetState = viewModel::resetState
     )
 }
 
@@ -94,7 +90,8 @@ fun YubinScreen(
     onTitleChange: (String) -> Unit = {},
     onImageCapture: (Uri) -> Unit = {},
     onSaveClick: () -> Unit = {},
-    onShareToBoard: () -> Unit = {}
+    onShareToBoard: () -> Unit = {},
+    onResetState: () -> Unit = {}
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -102,6 +99,14 @@ fun YubinScreen(
     var showBottomSheet by remember { mutableStateOf(false) }
     var selectedShareType by remember { mutableStateOf<ShareType?>(null) }
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+
+    LaunchedEffect(uiState.isSuccess) {
+        if (uiState.isSuccess) {
+            selectedShareType = null
+            tempUri = null
+            onResetState()
+        }
+    }
 
     val cameraLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.TakePicture(),

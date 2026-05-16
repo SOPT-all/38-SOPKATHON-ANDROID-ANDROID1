@@ -71,7 +71,7 @@ fun Yubin2Screen(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 18.dp, vertical = 12.dp)
+                .padding(horizontal = 18.dp, vertical = 9.dp)
         ) {
             Icon(
                 imageVector = ImageVector.vectorResource(R.drawable.ic_back),
@@ -83,7 +83,7 @@ fun Yubin2Screen(
                 tint = Color.Unspecified
             )
             Text(
-                text = uiState.formattedDate,
+                text = record?.dateLabel ?: "",
                 style = SopkathonTheme.typography.head.head3,
                 modifier = Modifier.align(Alignment.Center)
             )
@@ -119,7 +119,7 @@ fun Yubin2Screen(
                 Icon(
                     imageVector = ImageVector.vectorResource(R.drawable.ic_pencil),
                     contentDescription = null,
-                    modifier = Modifier.size(30.dp),
+                    modifier = Modifier.size(20.dp),
                     tint = Color.Unspecified
                 )
             }
@@ -129,16 +129,16 @@ fun Yubin2Screen(
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically,
             ) {
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(5.dp))
                         .background(SopkathonTheme.colors.subGreenGray)
-                        .padding(all = 5.dp)
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Text(
-                        text = uiState.formattedTime,
+                        text = record?.timeLabel ?: "",
                         style = SopkathonTheme.typography.head.head7_medium,
                         color = SopkathonTheme.colors.black,
                     )
@@ -150,9 +150,9 @@ fun Yubin2Screen(
                         .padding(horizontal = 13.dp, vertical = 6.dp)
                 ) {
                     Text(
-                        text = "서울 노원구",
+                        text = record?.locationLabel ?: "",
                         style = SopkathonTheme.typography.head.head7_medium,
-                        color = SopkathonTheme.colors.black
+                        color = SopkathonTheme.colors.black,
                     )
                 }
             }
@@ -181,7 +181,6 @@ fun Yubin2Screen(
                 text = "음성 기록",
                 style = SopkathonTheme.typography.head.head6_bold,
             )
-
             Spacer(modifier = Modifier.height(4.dp))
 
             Row(
@@ -198,7 +197,6 @@ fun Yubin2Screen(
                     modifier = Modifier.size(37.dp),
                     tint = Color.Unspecified,
                 )
-
                 Icon(
                     imageVector = ImageVector.vectorResource(R.drawable.ic_prograss),
                     contentDescription = null,
@@ -209,9 +207,9 @@ fun Yubin2Screen(
                 )
 
                 Text(
-                    text = "0.48",
-                    style = SopkathonTheme.typography.head.head6_bold,
-                    color = SopkathonTheme.colors.gray700
+                    text = record?.voiceDurationLabel ?: "0:00",
+                    style = SopkathonTheme.typography.caption.caption,
+                    color = SopkathonTheme.colors.gray500
                 )
             }
 
@@ -234,12 +232,14 @@ fun Yubin2Screen(
                     Spacer(modifier = Modifier.height(6.dp))
 
                     Text(
-                        text = "오늘 상추 모종 다섯 개 심었어, 아침에만 물을 줘야해.\n저녁에 주면 잎이 무거워져서 안 좋더라고\n한 달이면 따 먹을 수 있을거야",
+                        text = "오늘 상추 모종 다섯 개 심었어. 아침에만 물을 줘야 해. 햇볕 잘 드는 곳이라서 무럭무럭 잘 자라길!",
                         style = SopkathonTheme.typography.head.head7_regular,
                         color = SopkathonTheme.colors.black
                     )
                 }
             }
+
+            Spacer(modifier = Modifier.height(40.dp))
         }
     }
 }

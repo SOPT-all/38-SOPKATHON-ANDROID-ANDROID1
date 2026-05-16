@@ -1,5 +1,6 @@
 package org.sopt.soptackthon_app_1.presentation.gabyu.component
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
@@ -23,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.sopt.soptackthon_app_1.R
 import org.sopt.soptackthon_app_1.core.designsystem.theme.SopkathonTheme
@@ -36,15 +36,15 @@ enum class ShareType {
 
 @Composable
 fun BottomSheetContent(
-    selectedType: ShareType?,                  // 현재 선택된 타입 (상위 뷰에서 제어)
-    onTypeSelected: (ShareType) -> Unit,      // 타입이 선택되었을 때 콜백
-    onShareClick: () -> Unit,                  // 최하단 공유하기 버튼 클릭 콜백
+    selectedType: ShareType?,
+    onTypeSelected: (ShareType) -> Unit,
+    onShareClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .background(color = SopkathonTheme.colors.white) // 바텀시트 기본 배경색
+            .background(color = SopkathonTheme.colors.white)
             .padding(horizontal = 16.dp)
             .padding(top = 45.dp, bottom = 17.dp)
     ) {
@@ -64,6 +64,7 @@ fun BottomSheetContent(
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        // 카카오톡
         val isKakaoSelected = selectedType == ShareType.KAKAO
         Row(
             modifier = Modifier
@@ -75,20 +76,16 @@ fun BottomSheetContent(
                     color = if (isKakaoSelected) SopkathonTheme.colors.subGreen else Color.Transparent,
                     shape = RoundedCornerShape(10.dp)
                 )
-                .noRippleClickable { onTypeSelected(ShareType.LINK) }
+                .noRippleClickable { onTypeSelected(ShareType.KAKAO) }
                 .padding(horizontal = 16.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
-            Icon(
-                painter = painterResource(R.drawable.ic_kakao),
+            Image(
+                painter = painterResource(R.drawable.img_splash_logo), // Placeholder
                 contentDescription = null,
-                tint = Color.Unspecified,
                 modifier = Modifier.size(45.dp),
             )
-
             Spacer(modifier = Modifier.width(13.dp))
-
             Column {
                 Text(
                     text =  "카카오톡으로 보내기",
@@ -96,7 +93,7 @@ fun BottomSheetContent(
                     color = SopkathonTheme.colors.gray900
                 )
                 Text(
-                    text ="자녀 • 가족방 • 지인에게 공유해요",
+                    text = "자녀 • 가족방 • 지인에게 공유해요",
                     style = SopkathonTheme.typography.body.body2,
                     color = SopkathonTheme.colors.gray500
                 )
@@ -105,7 +102,7 @@ fun BottomSheetContent(
 
         Spacer(modifier = Modifier.height(9.dp))
 
-        // --- 2. 링크 복사 ---
+        // 링크 복사
         val isLinkSelected = selectedType == ShareType.LINK
         Row(
             modifier = Modifier
@@ -127,9 +124,7 @@ fun BottomSheetContent(
                 contentDescription = null,
                 tint = Color.Unspecified
             )
-
             Spacer(modifier = Modifier.width(13.dp))
-
             Column {
                 Text(
                     text = "링크 복사",
@@ -146,6 +141,7 @@ fun BottomSheetContent(
 
         Spacer(modifier = Modifier.height(9.dp))
 
+        // 또래 게시판
         val isBoardSelected = selectedType == ShareType.BOARD
         Row(
             modifier = Modifier
@@ -189,24 +185,6 @@ fun BottomSheetContent(
             backgroundColor = SopkathonTheme.colors.gray900,
             textColor = SopkathonTheme.colors.white,
             modifier = Modifier.fillMaxWidth()
-        )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun BottomSheetContentPreview() {
-    SopkathonTheme {
-        var currentSelection by remember { mutableStateOf<ShareType?>(ShareType.KAKAO) }
-
-        BottomSheetContent(
-            selectedType = currentSelection,
-            onTypeSelected = { selected ->
-                currentSelection = selected
-            },
-            onShareClick = {
-                println("선택된 타입: $currentSelection 공유 완료!")
-            }
         )
     }
 }

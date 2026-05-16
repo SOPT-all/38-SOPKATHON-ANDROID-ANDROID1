@@ -8,10 +8,11 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.sopt.soptackthon_app_1.BuildConfig
 import org.sopt.soptackthon_app_1.data.service.DummyService
 import retrofit2.Retrofit
+import java.util.concurrent.TimeUnit
 
 object ApiFactory {
     private val BASE_URL: String = if (BuildConfig.BASE_URL.isEmpty()) "http://localhost/" else BuildConfig.BASE_URL
-
+    
     private val json = Json {
         ignoreUnknownKeys = true
     }
@@ -21,6 +22,9 @@ object ApiFactory {
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
+        .connectTimeout(60, TimeUnit.SECONDS)
+        .readTimeout(60, TimeUnit.SECONDS)
+        .writeTimeout(60, TimeUnit.SECONDS)
         .build()
 
     val retrofit: Retrofit by lazy {
@@ -37,4 +41,5 @@ object ApiFactory {
 object ServicePool {
     //TODO Service 적으면 돼요
     val dummyService by lazy { ApiFactory.create<DummyService>() }
+    val recordService by lazy { ApiFactory.create<org.sopt.soptackthon_app_1.data.service.RecordService>() }
 }

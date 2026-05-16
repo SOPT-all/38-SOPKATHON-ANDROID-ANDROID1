@@ -19,11 +19,8 @@ android {
     }
 
     defaultConfig {
-        buildConfigField(
-            "String",
-            "BASE_URL",
-            "\"https://sopkathon.o-r.kr/\""
-        )
+        buildConfigField("String", "BASE_URL", project.findProperty("BASE_URL")?.toString() ?: "\"https://sopkathon.o-r.kr/\"")
+
         applicationId = "org.sopt.soptackthon_app_1"
         minSdk = 24
         targetSdk = 35

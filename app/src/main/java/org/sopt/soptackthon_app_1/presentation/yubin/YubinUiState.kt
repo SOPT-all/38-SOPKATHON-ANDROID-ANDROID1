@@ -7,5 +7,6 @@ data class YubinUiState(
     val imageUri: Uri? = null,
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
+    val recordId: Long? = null,
     val error: String? = null,
 )

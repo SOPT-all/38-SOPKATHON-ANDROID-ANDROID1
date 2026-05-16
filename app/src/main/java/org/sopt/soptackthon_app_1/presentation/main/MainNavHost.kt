@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
 import org.sopt.soptackthon_app_1.core.navigation.Gabyu
 import org.sopt.soptackthon_app_1.core.navigation.Yerim
 import org.sopt.soptackthon_app_1.core.navigation.Yubin
@@ -42,9 +43,9 @@ fun MainNavHost(
             }
 
             composable<Yubin2> { backStackEntry ->
-                val route: Yubin2 = backStackEntry.toRoute()
+                val yubin2: Yubin2 = backStackEntry.toRoute()
                 Yubin2Route(
-                    recordId = route.recordId,
+                    recordId = yubin2.recordId,
                     navigateToGabyu = { navController.navigateToGabyu() },
                 )
             }
