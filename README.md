@@ -1,20 +1,32 @@
-# 38-SOPKATHON-ANDROID-ANDROID1
+<img width="4896" height="3672" alt="KakaoTalk_Photo_2026-05-17-01-12-36" src="https://github.com/user-attachments/assets/92d283f7-7ee9-4b0a-8f83-9148a62ac581" /># 38-SOPKATHON-ANDROID-ANDROID1
 
 ## 🚀 프로젝트 소개
 
 ## 1. 서비스 이름 및 간단한 소개
-### 서비스 명 : 
-- **한 줄 소개**: [여기에 한 줄 소개를 적어주세요]
-  
+### 서비스 명 : 노화우
+**한 줄 소개**: 노화우는 노화가 다가오는 5·60대를 위해 건강한 나이듦의 노하우를 제안하는 서비스를 뜻합니다
+
 ## 2. 주요 기능
-- **한 줄 소개**: [여기에 한 줄 소개를 적어주세요]
+- 음성 기록: 큰 버튼 한 번으로 녹음 → 음성과 텍스트 동시에 자동 저장
+  사진 기록: 사진 + 메타 데이터를 통한 날짜·위치 자동 태깅
+- 보관 :"노하우집" 컨셉
+  월별 갤러리(캘린더) 뷰: 한 달치 기록이 캘린더 위에 사진 썸네일로 깔리는 형태 → "내 노하우집"이라는 자산감
+  날짜 셀을 누르면 그날의 음성+사진 카드 열림
+  월 단위로 넘기면서 "올해 봄에 뭘 했더라" 회상 가능
+- 공유 : 또래 + 자녀
+  또래 공유: 앱 내 "동네 노하우" / "또래 노하우" 피드 (다른 5·60대 사용자들의 공개 기록 둘러보기)
+  자녀 공유: 앱의 기록이 자녀와 함께 공유 + notification
+  자녀의 반응: 이모지·한 줄 답장 → 부모님 앱에 알림
+- 서비스 제공 - 노하우 라이브러리
+  카테고리별 둘러보기 (텃밭·산책·약초·절기)
+  추천 : "오늘 뭐 할까?" - 날씨·계절 기반 규칙형 추천
 
 ## 3. 팀원 역할 분담
 
 | 👑 한유빈<br/>([@oilbeaneda](https://github.com/oilbeaneda)) | 김예림<br/>([@doorimng](https://github.com/doorimng)) | 윤갑유<br/>([@gahbyu](https://github.com/gahbyu)) |
 | :---: | :---: | :---: |
 | <img width="200px" src="https://github.com/oilbeaneda.png"/> | <img width="200px" src="https://github.com/doorimng.png"/> | <img width="200px" src="https://github.com/gahbyu.png"/> |
-| `역할을 입력해주세요` | `역할을 입력해주세요` | `역할을 입력해주세요` |
+| `기록-음성+사진,상세 페이지 ` | `홈-또래 공유 게시판,스플래시` | `나의 기록 노화우집` |
 
   
 ## 🛠 Tech Stack
@@ -101,3 +113,10 @@ org.sopt.soptackthon_app_1
 | `del`      | 삭제    |
 | `fix`      | 버그 수정 |
 | `refactor` | 리팩토링  |
+
+
+### **BEFORE**
+
+<img width="4896" height="3672" alt="KakaoTalk_Photo_2026-05-17-01-12-36" src="https://github.com/user-attachments/assets/fcf7ea31-a804-43ae-a1fe-0f7eea559d98" />
+
+
